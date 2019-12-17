@@ -1,14 +1,13 @@
-<h1>
-  Showing selected article
+<h1 align="center"><%= @article.title %>
 </h1>
+<div class="well col-xs-8 col-xs-offset-2">
+  <hr>
+<h4 class="panel" align="center">
+  <%= simple_format(@article.description) %>
+</h4>
 
-<p>
-  Title: <%= @article.title %>
-</p>
 
-<p>
-  Description: <%= @article.description %>
-</p>
-
+<p align="center">
 <%= link_to "Edit this article", edit_article_path(@article) %> |
 <%= link_to "Back to articles", articles_path %>
+  </p>
