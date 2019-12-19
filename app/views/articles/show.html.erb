@@ -10,6 +10,9 @@
   </div>
 
 <p align="center">
-<%= link_to "Edit this article", edit_article_path(@article) %> |
-<%= link_to "Back to articles", articles_path %>
+<%= link_to "Edit this Creation", edit_article_path(@article), class: "btn btn-xs btn-primary btn-secondary" %> |
+<%= link_to "Destroy this Creation", article_path(@article), method: :delete, 
+                                      data: { confirm: "Are you sure you want to Destroy???"}, 
+                                      class: "btn btn-xs btn-danger" %> |
+<%= link_to "View Creations", articles_path, class: "btn tbn-xs btn-success" %>
   </p>
