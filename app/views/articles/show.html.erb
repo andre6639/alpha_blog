@@ -1,7 +1,20 @@
 <h1 align="center"><%= @article.title %>
 </h1>
-<div class="well col-xs-8 col-xs-offset-2">
-  <hr>
+<div class="col-xs-8 col-xs-offset-2">
+ <% if @article.user %>
+  <ul class="listing">
+        <div class="center">
+          <li>The Alter:</li>   
+          <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+               </li>
+             <li class="article-title">
+                <%= link_to @article.user.username, user_path(@article.user) %>
+               </li>
+             <li><small><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %>
+               </small></li>
+        </div>
+  </ul> 
+ <% end %>
 <h4 class="panel" align="center">
   <%= simple_format(@article.description) %>
 </h4>
@@ -14,4 +27,5 @@
     <%= link_to "View Creations", articles_path, class: "btn btn-xs btn-success" %>
     </p>
   </div>
+</div>
   

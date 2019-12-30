@@ -28,7 +28,7 @@
 
 .jumbotron h1 {
   color: black;
-  test-align: center;
+  text-align: center;
   margin-bottom: 300px;
   letter-spacing: -1px;
   font-weight: bold;
@@ -69,6 +69,11 @@
 
 .article-actions {
   border-bottom: 50px solid #ffffff;
+}
+
+.listing {
+  list-style: none;
+  padding-left: 0;
 }
 
 footer {
