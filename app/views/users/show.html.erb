@@ -7,10 +7,17 @@
 <div class="center">
   <h4><%= @user.username %>'s Creations!!!</h4>
 </div>
+<br>
+<br>
+<br>
 <div class="center">
+  <div class="inline">
   <%= will_paginate @user_articles %>
+  </div>
 </div>
 <%= render 'articles/article', obj: @user_articles %>
 <div class="center">
+  <div class="inline">
   <%= will_paginate @user_articles %>
+  </div>
 </div>

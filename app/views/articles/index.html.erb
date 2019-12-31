@@ -1,12 +1,17 @@
 <h1 align="center">
    THESE ARE CREATIONS!!!!!
 </h1>
+<br>
 <div class="center">
-  <%= will_paginate %>
+  <div class="inline">
+  <%= will_paginate @user_articles %>
+  </div>
 </div>
 <ul class="listing">
   <%= render 'article', obj: @articles %>
 </ul>
 <div class="center">
-  <%= will_paginate %>
+  <div class="inline">
+  <%= will_paginate @user_articles %>
+  </div>
 </div>

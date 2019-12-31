@@ -4,7 +4,11 @@
 <br>
 <br>
 <br>
-<%= will_paginate %>
+<div class="center">
+  <div class="inline">
+  <%= will_paginate @users %>
+  </div>
+</div>
   <% @users.each do |user| %>
     <ul class="listing">
         <div class="center">
@@ -16,5 +20,9 @@
         </div>
   </ul> 
   <% end %>
-<%= will_paginate %>
+<div class="center">
+  <div class="inline">
+  <%= will_paginate @users %>
+  </div>
+</div>
   
