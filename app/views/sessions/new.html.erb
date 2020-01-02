@@ -1,0 +1,30 @@
+<h1 align="center">
+  Login to your Alter!!!
+</h1>
+
+<%= form_for(:session, :html => {class:"form-horizontal", role: "form"}, url: login_path) do |f| %>
+      <div align="center" class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :email, "email" %>
+        </div>
+        <div class="col-sm-8">
+          <%= f.email_field :email, class: "form-control", placeholder: "Enter Your email!!!", autofocus: true %>
+        </div>
+    </div>
+    <div align="center" class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :password %></br>
+        </div>
+        <div align="center" class="col-sm-8">
+          <%= f.password_field :password, rows: 1, class: "form-control", autocomplete: "off" %>
+        </div>
+      </div>
+      <div align="center" class="form-group">
+        <div class="col-sm-10">
+          <%= f.submit "Log In", class: "btn btn-primary btn-lg btn-success" %>
+        </div>
+      </div>
+    <% end %>
+    <div align="center" class="col-xs-4 col-xs-offset-4">
+     [ <%= link_to "Cancel Request and Return to Creations!", articles_path %> ]
+  </div>  
