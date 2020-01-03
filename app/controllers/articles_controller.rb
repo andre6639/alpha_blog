@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   end
   
   def edit
-  
+    @user = current_user
   end
   
   def create
@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
   end
   
   def show
-
+    @user = current_user
   end
   
   def destroy
