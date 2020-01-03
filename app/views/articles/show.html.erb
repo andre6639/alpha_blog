@@ -19,7 +19,7 @@
   <%= simple_format(@article.description) %>
 </h4>
   <div class="article-actions">
-    <% if logged_in? && current_user == @article.user %>
+    <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
       <p align="center">
        <%= link_to "Edit this Creation", edit_article_path(@article), class: "btn btn-sm btn-primary btn-secondary" %> |
        <%= link_to "Destroy this Creation", article_path(@article), method: :delete, 

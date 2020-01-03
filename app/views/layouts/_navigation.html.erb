@@ -7,8 +7,6 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if logged_in? %>
-        <a class="nav-link" <%= link_to 'Log out', logout_path, method: :delete %></a>
-        <a class="nav-link" <%= link_to 'Users', users_path %></a>
       <% else %>
         <li class="nav-item">
           <a class="nav-link" <%= link_to ".base_state", about_path %></a>
@@ -19,16 +17,18 @@
       <% end %>
       <% if logged_in? %>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            :~$
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" <%= link_to "#{@user.username}_Space", class: "navbar-brand", id: "logo" %>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" <%= link_to "Create", new_article_path(current_user) %></a>
+            <a class="dropdown-item" <%= link_to "New Story", new_article_path(current_user) %></a>
+            <a class="dropdown-item" <%= link_to "Your profile", user_path(current_user) %></a>
             <a class="dropdown-item" <%= link_to "Edit your profile", edit_user_path(current_user) %></a>
-            <a class="dropdown-item" <%= link_to "View your profile", user_path(current_user) %></a>
-            <a class="dropdown-item" href="#">Initiate (coming soon)</a>
+            <a class="dropdown-item" <%= link_to "Admin" if current_user.admin? %></a>
+            <a class="dropdown-item" <%= link_to 'Log out', logout_path, method: :delete %></a>
+            <a class="dropdown-item" <%= link_to 'Users', users_path %></a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">AR createscape</a>
+            <a class="dropdown-item" href="#">Initiate (coming soon)</a>
           </div>
         </li>
       <% else %>

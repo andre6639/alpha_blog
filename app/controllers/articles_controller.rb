@@ -5,10 +5,12 @@ class ArticlesController < ApplicationController
   
   def index
     @articles = Article.paginate(page: params[:page], per_page: 10)
+    @user = current_user
   end
     
   def new
     @article = Article.new
+    @user = User.new
   end
   
   def edit
@@ -36,7 +38,7 @@ class ArticlesController < ApplicationController
   end
   
   def show
-    
+
   end
   
   def destroy
@@ -55,9 +57,10 @@ private
   end
   
   def require_same_user
-    if current_user != @article.user
+    if current_user != @article.user and !current_user.admin?
       flash[:danger] = "You can only edit/delete your own article, silly!!!"
       redirect_to root_path
     end
   end
+  
 end
