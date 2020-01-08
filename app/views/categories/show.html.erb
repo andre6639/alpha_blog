@@ -1,6 +1,11 @@
 <h1 align="center">
    <%= "Category: " + @category.name %>
 </h1>
+<div class="center">
+  <% if logged_in? and current_user.admin? %>
+    <span class="badge"><%= link_to "Edit Category Name", edit_category_path(@category) %></span>
+  <% end %>
+</div>
 <br>
 <div class="center">
   <div class="inline">
