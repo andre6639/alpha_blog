@@ -18,6 +18,11 @@
 <h4 class="panel" align="center">
   <%= simple_format(@article.description) %>
 </h4>
+  <% if @article.categories.any? %>
+    <p>
+      Categories: <%= render @article.categories %>
+  </p>
+  <% end %>
   <div class="article-actions">
     <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
       <p align="center">
